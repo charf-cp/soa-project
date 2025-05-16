@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package verification;
+
+service VerificationService {
+  rpc VerifyUser (VerificationRequest) returns (VerificationResponse) {}
+}
+
+message VerificationRequest {
+  string userId = 1;
+  string credential = 2;
+}
+
+message VerificationResponse {
+  bool verified = 1;
+  string message = 2;
+}
